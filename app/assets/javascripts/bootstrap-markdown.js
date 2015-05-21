@@ -27,8 +27,8 @@
   var Markdown = function (element, options) {
     // @TODO : remove this BC on next major release
     // @see : https://github.com/toopay/bootstrap-markdown/issues/109
-    var opts = ['autofocus', 'savable', 'hideable', 'width', 
-      'height', 'resize', 'iconlibrary', 'language', 
+    var opts = ['autofocus', 'savable', 'hideable', 'width',
+      'height', 'resize', 'iconlibrary', 'language',
       'footer', 'fullscreen', 'hiddenButtons', 'disabledButtons'];
     $.each(opts,function(_, opt){
       if (typeof $(element).data(opt) !== 'undefined') {
@@ -472,7 +472,7 @@
         // @see https://github.com/toopay/bootstrap-markdown/issues/170
         return this;
       }
-      
+
       // Give flag that tell the editor enter preview mode
       this.$isPreview = true;
       // Disable all buttons
@@ -1149,13 +1149,13 @@
                 chunk = list[0];
 
                 $.each(list,function(k,v) {
-                  list[k] = '1. '+v;
+                  list[k] = (k+1)+'. '+v
                 });
 
-                e.replaceSelection('\n\n'+list.join('\n'));
+                e.replaceSelection(list.join('\n'));
 
                 // Set the cursor
-                cursor = selected.start+5;
+                cursor = selected.start+3;
               }
             }
 
